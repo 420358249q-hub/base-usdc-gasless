@@ -15,11 +15,14 @@ python3 -m venv .venv
 Use USDC base units (6 decimals) and keep the owner key in an environment variable or a secret manager:
 
 ```bash
+# Base Mainnet USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 (chainId: 8453)
+# Base Sepolia USDC: 0x036CbD53842c5426634e7929541eC2318f3dCF7e (chainId: 84532)
 OWNER_PRIVATE_KEY=0x... \
 .venv/bin/base-usdc-transfer \
-  --token 0xA0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 \
+  --token 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 \
   --recipient 0x... \
-  --amount 1000000
+  --amount 1000000 \
+  --chain-id 8453
 ```
 
 The CLI prints only the authorization fields. Review the recipient, amount, validity window, token domain, and chain ID before any relayer broadcasts the transaction.
